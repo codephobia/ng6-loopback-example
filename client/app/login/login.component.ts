@@ -32,14 +32,17 @@ export class LoginComponent {
         this.user.login({
                 username: this.username,
                 password: this.password
-            }).pipe(
-            finalize(() => {
-                this.loading = false;
-            }))
+            })
+            .pipe(
+                finalize(() => {
+                    this.loading = false;
+                })
+            )
             .subscribe(
                 res => {},
                 data => {
-                    this.snackbar.notify(data.message, ['error']);
+                    let errMsg: string = data.message || 'Unknown Error';
+                    this.snackbar.notify(errMsg, ['error']);
                     console.error('err: ', data);
                 },
                 () => {
