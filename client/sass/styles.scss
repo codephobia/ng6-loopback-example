@@ -1,0 +1,62 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~sass/modules/colors";
+@import "~sass/modules/margin";
+@import "~sass/modules/padding";
+@import "~sass/modules/reset";
+@import "~sass/modules/material-reset";
+@import "~sass/modules/transitions";
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+html,
+body,
+.app-root {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: map-get($colors, bg);
+}
+
+.app-root {
+    display: block;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.container-max-1200 {
+    max-width: 1200px;
+}
+
+.router-flex + * {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+.user-menu {
+    background-color: map-get($colors, primary-light) !important;
+
+    .mat-menu-content {
+        padding: 0;
+
+        .mat-menu-item {
+            color: map-get($colors, header-text);
+            transition: map-get($transitions, fast) color, map-get($transitions, fast) background-color;
+
+            &:hover {
+                color: map-get($colors, header-text-hover);
+                background-color: map-get($colors, primary-dark);
+            }
+        }
+    }
+}

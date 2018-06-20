@@ -1,0 +1,22 @@
+@import "~sass/modules/animations";
+
+.app-button {
+    padding: 0 24px;
+    min-width: 180px;
+    border: 1px solid map-get($colors, primary-dark);
+
+    &.loading {
+        color: white;
+        background-color: map-get($colors, primary-dark);
+
+        &::after {
+            font-family: 'FontAwesome';
+            content: '\f013';
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            animation: map-get($animations, rotate);
+        }
+    }
+}
+

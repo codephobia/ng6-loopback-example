@@ -1,0 +1,27 @@
+<div class="p-t-xl p-b-xl" fxLayout="row" fxFlex>
+    <form class="signup-form" (ngSubmit)="onSignup()" fxLayout="column" fxFlex>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username" autofocus>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="text" name="email" placeholder="Email" [(ngModel)]="email">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <mat-form-field fxFlex>
+                <input matInput type="password" name="cpassword" placeholder="Confirm Password" [(ngModel)]="cpassword">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex>
+            <button mat-button color="primary" type="submit" fxFlex>Signup</button>
+        </div>
+    </form>
+</div>

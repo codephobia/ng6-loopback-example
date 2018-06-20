@@ -1,0 +1,33 @@
+$space: (
+    xs: 5px,
+    sm: 10px,
+    md: 15px,
+    lg: 20px,
+    xl: 30px,
+    none: 0px,
+);
+
+@mixin marginSet($size) {
+    .m-#{$size} {
+        margin: map-get($space, $size) !important;
+    }
+    .m-t-#{$size} {
+        margin-top: map-get($space, $size) !important;
+    }
+    .m-r-#{$size} {
+        margin-right: map-get($space, $size) !important;
+    }
+    .m-b-#{$size} {
+        margin-bottom: map-get($space, $size) !important;
+    }
+    .m-l-#{$size} {
+        margin-left: map-get($space, $size) !important;
+    }
+}
+
+@include marginSet(xs);
+@include marginSet(sm);
+@include marginSet(md);
+@include marginSet(lg);
+@include marginSet(xl);
+@include marginSet(none);

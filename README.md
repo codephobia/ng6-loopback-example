@@ -1,1 +1,1 @@
-# ng6-loopback-example
+# ng5-loopback-example

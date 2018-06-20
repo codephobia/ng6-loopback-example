@@ -1,0 +1,32 @@
+@import '~sass/modules/colors';
+@import '~sass/modules/transitions';
+
+:host {
+    padding: 14px 24px;
+}
+
+:host-context(.mat-snack-bar-container.error) {
+    background-color: map-get($colors, error);
+}
+
+:host-context(.mat-snack-bar-container.success) {
+    background-color: map-get($colors, success);
+}
+
+.message {
+    padding: 0 34px 0 0;
+}
+
+.close {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    color: rgba(255,255,255,.75);
+    transition: map-get($transitions, fast);
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        color: rgba(255,255,255,1);
+    }
+}

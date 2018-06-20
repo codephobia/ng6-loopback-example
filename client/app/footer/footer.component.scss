@@ -1,0 +1,33 @@
+@import '~sass/modules/colors';
+@import '~sass/modules/transitions';
+
+.app-footer {
+    .footer-col-title {
+        color: #d2d2d2;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+
+            a {
+                color: map-get($colors, footer-text);
+                text-decoration: none;
+                transition: map-get($transitions, fast) color;
+
+                &:focus,
+                &:hover {
+                    color: map-get($colors, footer-text-hover);
+                }
+            }
+        }
+    }
+}

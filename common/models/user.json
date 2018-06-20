@@ -1,0 +1,52 @@
+{
+	"name": "user",
+	"plural": "users",
+	"base": "User",
+	"strict": true,
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"properties": {
+		"realm": false,
+		"username": {
+            "type": "String",
+            "required": true
+		},
+		"email": {
+            "type": "String",
+            "required": true
+		},
+		"active": {
+			"type": "Boolean",
+			"default": true
+		}
+	},
+	"hidden": [
+		"password",
+		"emailVerified"
+	],
+	"relations": {
+		"accessTokens": {
+			"type": "hasMany",
+			"model": "accessToken",
+			"foreignKey": "userId",
+			"options": {
+				"disableInclude": true
+			}
+		}
+	},
+	"acls": [
+        {
+            "principalType": "ROLE",
+            "principalId": "$everyone",
+            "permission": "ALLOW",
+            "property": "findOne",
+            "accessType": "EXECUTE"
+        }
+	],
+	"validations": [],
+	"mixins": {
+	},
+	"methods": []
+}

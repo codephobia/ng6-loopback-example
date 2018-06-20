@@ -1,0 +1,20 @@
+@import '~sass/modules/colors';
+@import '~sass/modules/transitions';
+
+.header-nav {
+    ::ng-deep a {
+        color: map-get($colors, header-text);
+        text-decoration: none;
+        transition: map-get($transitions, fast) color;
+        line-height: 64px;
+
+        &:focus,
+        &:hover {
+            color: map-get($colors, header-text-hover);
+        }
+
+        &.active {
+            color: map-get($colors, header-text-hover);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@import '~sass/modules/colors';
+@import '~sass/partials/buttons';
+
+button {
+    @extend .app-button;
+}

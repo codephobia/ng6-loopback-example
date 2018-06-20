@@ -1,0 +1,77 @@
+@import '~@angular/material/theming';
+@import '~sass/modules/colors';
+
+@include mat-core();
+
+$md-palette-primary: (
+    50 : #edf4ff,
+    100 : #d2e4ff,
+    200 : #b5d2ff,
+    300 : #97c0ff,
+    400 : #80b3ff,
+    500 : #6aa5ff,
+    600 : #629dff,
+    700 : #5793ff,
+    800 : #4d8aff,
+    900 : #3c79ff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #e5ecff,
+    A700 : #cbdaff,
+    contrast: (
+        50 : map-get($colors, header-text),
+        100 : map-get($colors, header-text),
+        200 : map-get($colors, header-text),
+        300 : map-get($colors, header-text),
+        400 : map-get($colors, header-text),
+        500 : map-get($colors, header-text),
+        600 : map-get($colors, header-text),
+        700 : map-get($colors, header-text),
+        800 : map-get($colors, header-text),
+        900 : map-get($colors, header-text),
+        A100 : map-get($colors, header-text),
+        A200 : map-get($colors, header-text),
+        A400 : map-get($colors, header-text),
+        A700 : map-get($colors, header-text),
+    )
+);
+
+$md-palette-secondary: (
+    50 : #fffae9,
+    100 : #fff3c9,
+    200 : #ffeca5,
+    300 : #ffe480,
+    400 : #ffde65,
+    500 : #ffd84a,
+    600 : #ffd443,
+    700 : #ffce3a,
+    800 : #ffc832,
+    900 : #ffbf22,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff1d1,
+    A700 : #ffe9b8,
+    contrast: (
+        50 : map-get($colors, header-text),
+        100 : map-get($colors, header-text),
+        200 : map-get($colors, header-text),
+        300 : map-get($colors, header-text),
+        400 : map-get($colors, header-text),
+        500 : map-get($colors, header-text),
+        600 : map-get($colors, header-text),
+        700 : map-get($colors, header-text),
+        800 : map-get($colors, header-text),
+        900 : map-get($colors, header-text),
+        A100 : map-get($colors, header-text),
+        A200 : map-get($colors, header-text),
+        A400 : map-get($colors, header-text),
+        A700 : map-get($colors, header-text),
+    )
+);
+
+$primary: mat-palette($md-palette-primary, 500);
+$accent: mat-palette($md-palette-secondary, 500);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
