@@ -1,6 +1,6 @@
 {
     "mongodb": {
-        "url": "mongodb://localhost:27017/ng5-example",
+        "url": "mongodb://localhost:27017/ng6-loopback-example",
         "name": "mongodb",
         "connector": "loopback-connector-mongodb",
         "auto_reconnect": true,
