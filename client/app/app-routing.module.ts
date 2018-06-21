@@ -5,13 +5,13 @@ import { HomeRoutes, HomeProviders } from './home/home.routes';
 import { LoginRoutes, LoginProviders } from './login/login.routes';
 import { SignupRoutes, SignupProviders } from './signup/signup.routes';
 import { NotFoundRoutes, NotFoundProviders } from './not-found/not-found.routes';
-import { ProfileRoutes, ProfileProviders } from './profile/profile.routes';
+import { ProfilesModuleRoute } from '../../modules/profiles/client/profiles.module.route';
 
 const routes: Routes = [
     ...HomeRoutes,
     ...LoginRoutes,
     ...SignupRoutes,
-    ...ProfileRoutes,
+    ...ProfilesModuleRoute,
     ...NotFoundRoutes,
 ];
 
@@ -22,7 +22,6 @@ const routes: Routes = [
         ...HomeProviders,
         ...LoginProviders,
         ...SignupProviders,
-        ...ProfileProviders,
         ...NotFoundProviders,
     ],
 })

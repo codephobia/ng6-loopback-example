@@ -5,7 +5,7 @@
 <div *ngIf="isAuthenticated()">
     <button class="btn-user-nav" mat-button [matMenuTriggerFor]="userMenu" [ngClass]="{ 'open': isMenuOpen() }">{{getUsername()}}</button>
     <mat-menu class="user-menu" #userMenu="matMenu" xPosition="before" yPosition="below" [overlapTrigger]="false">
-        <a mat-menu-item routerLink="/profile/{{getUsername()}}" [routerLinkActive]="['active']">Profile</a>
+        <a mat-menu-item routerLink="/profiles/{{getUsername()}}" [routerLinkActive]="['active']">Profile</a>
         <button mat-menu-item (click)="onLogout()">Logout</button>
     </mat-menu>
 </div>

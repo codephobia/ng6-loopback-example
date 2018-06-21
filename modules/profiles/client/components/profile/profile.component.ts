@@ -2,7 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, CanActivate, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { User, UserApi as UserService } from '../lbservices';
+import { User, UserApi as UserService } from '../../../../../client/app/lbservices';
 
 @Component({
     selector: '.app-profile',

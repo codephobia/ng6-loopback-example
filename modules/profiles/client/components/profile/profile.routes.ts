@@ -3,7 +3,7 @@ import { ProfileComponent, CanActivateProfile } from './profile.component';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { UserApi as UserService } from '../lbservices';
+import { UserApi as UserService } from '../../../../../client/app/lbservices';
 
 @Injectable()
 export class ProfileResolver implements Resolve<UserService> {
@@ -26,12 +26,12 @@ export class ProfileResolver implements Resolve<UserService> {
 
 export const ProfileRoutes: Routes = [
     {
-        path: 'profile/:username',
+        path: ':username',
         component: ProfileComponent,
         canActivate: [CanActivateProfile],
         resolve: {
             profile: ProfileResolver,
-        }
+        },
     },
 ];
 

@@ -8,6 +8,11 @@
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "../modules/**/*.spec.ts"
+  ],
+  "include": [
+    "./**/*.ts",
+    "../modules/**/client/*.ts"
   ]
 }
