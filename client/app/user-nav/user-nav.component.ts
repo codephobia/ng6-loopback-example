@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MatMenuTrigger } from '@angular/material';
-import { UserApi as UserService } from '../lbservices';
+import { UserApi as UserService } from '@lbservices';
 import { SnackBarService } from '../services/snack-bar.service';
 
 @Component({

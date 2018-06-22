@@ -3,6 +3,11 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": ["environments/*"],
+      "@lbservices": ["app/lbservices"]
+    },
     "module": "es2015",
     "types": []
   },

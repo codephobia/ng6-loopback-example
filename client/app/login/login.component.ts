@@ -3,7 +3,7 @@ import { Injectable, Component, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { UserApi as UserService } from '../lbservices';
+import { UserApi as UserService } from '@lbservices';
 import { SnackBarService } from '../services/snack-bar.service';
 
 @Component({

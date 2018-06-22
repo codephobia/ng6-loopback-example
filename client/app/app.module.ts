@@ -9,7 +9,7 @@ import { MatToolbarModule, MatMenuModule, MatInputModule, MatButtonModule, MatSn
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SDKBrowserModule } from './lbservices';
+import { SDKBrowserModule } from '@lbservices';
 import { UserNavComponent } from './user-nav/user-nav.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
