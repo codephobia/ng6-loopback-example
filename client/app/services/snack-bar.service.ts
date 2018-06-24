@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material';
 import { SnackBarComponent } from '../snack-bar/snack-bar.component';
 
 @Injectable()
 export class SnackBarService {
-    snackBarRef: any;
+    snackBarRef: MatSnackBarRef<SnackBarComponent>;
 
     constructor(public snackBar: MatSnackBar) {}
 
@@ -19,5 +19,4 @@ export class SnackBarService {
         });
         this.snackBarRef.instance.snackBarRef = this.snackBarRef;
     }
-
 }
