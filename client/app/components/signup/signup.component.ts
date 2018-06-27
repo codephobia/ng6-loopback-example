@@ -4,8 +4,8 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { UserApi as UserService, User } from '@lbservices';
-import { SnackBarService } from '../services/snack-bar.service';
+import { UserApi as UserService } from '@lbservices';
+import { SnackBarService } from '@shared/services/snack-bar/snack-bar.service';
 
 @Component({
     selector: '.app-signup',
@@ -17,11 +17,11 @@ import { SnackBarService } from '../services/snack-bar.service';
     ],
 })
 export class SignupComponent implements OnInit {
-    private loading: boolean = false;
-    private username: string = '';
-    private email: string = '';
-    private password: string = '';
-    private cpassword: string = '';
+    loading: boolean = false;
+    username: string = '';
+    email: string = '';
+    password: string = '';
+    cpassword: string = '';
 
     constructor(
         private router: Router,

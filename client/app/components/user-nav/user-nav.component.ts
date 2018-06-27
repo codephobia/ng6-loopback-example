@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { MatMenuTrigger } from '@angular/material';
 import { UserApi as UserService } from '@lbservices';
-import { SnackBarService } from '../services/snack-bar.service';
+import { SnackBarService } from '@shared/services/snack-bar/snack-bar.service';
 
 @Component({
     selector: 'app-user-nav',

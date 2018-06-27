@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { MatToolbarModule, MatMenuModule, MatSnackBarModule } from '@angular/material';
+import { SDKBrowserModule } from '@lbservices';
 
 import { HeaderComponent } from './header.component';
+import { UserNavComponent } from '@app/components/user-nav/user-nav.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +13,17 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [
+          HeaderComponent,
+          UserNavComponent
+        ],
+      imports: [
+          RouterTestingModule,
+          SDKBrowserModule.forRoot(),
+          MatToolbarModule,
+          MatMenuModule,
+          MatSnackBarModule
+        ],
     })
     .compileComponents();
   }));

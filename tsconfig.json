@@ -5,7 +5,9 @@
     "paths": {
       "@app/*": ["app/*"],
       "@env/*": ["environments/*"],
-      "@lbservices": ["app/lbservices"]
+      "@shared/*": ["app/shared/*"],
+      "@lbservices": ["app/lbservices"],
+      "@modules/*": ["../modules/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

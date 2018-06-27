@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material';
-import { SnackBarComponent } from '../snack-bar/snack-bar.component';
+import { SnackBarComponent } from '@shared/components/snack-bar/snack-bar.component';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class SnackBarService {
     snackBarRef: MatSnackBarRef<SnackBarComponent>;
 

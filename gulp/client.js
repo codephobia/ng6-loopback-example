@@ -6,7 +6,7 @@ var exec = require('child_process').exec;
 
 // default gulp
 gulp.task('client', function(callback) {
-    var client = exec('ng serve -o');
+    var client = exec('ng serve');
 
     client.stdout.on('data', function(data) {
         if (data)

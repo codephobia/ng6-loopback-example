@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { Observable } from 'rxjs/Rx';
 
 import { UserApi as UserService } from '@lbservices';
-import { SnackBarService } from '../services/snack-bar.service';
+import { SnackBarService } from '@shared/services/snack-bar/snack-bar.service';
 
 @Component({
     selector: '.app-login',
@@ -16,9 +16,9 @@ import { SnackBarService } from '../services/snack-bar.service';
     ],
 })
 export class LoginComponent {
-    private loading: boolean = false;
-    private username: string;
-    private password: string;
+    loading: boolean = false;
+    username: string;
+    password: string;
 
     constructor(
         protected user: UserService,

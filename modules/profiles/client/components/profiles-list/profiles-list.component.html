@@ -1,3 +1,9 @@
-<p>
-  profiles-list works!
-</p>
+<div>
+    <div app-pagination [pagination]="profilesPagination"></div>
+
+    <div *ngFor="let profile of profiles">
+        {{profile.username}}
+    </div>
+
+    <div app-pagination [pagination]="profilesPagination"></div>
+</div>
