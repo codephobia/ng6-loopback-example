@@ -1,8 +1,8 @@
 // TODO: fix unit tests
-/*
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PaginationComponent } from './pagination.component';
+import { PaginationService } from '@shared/services/pagination/pagination.service';
 
 describe('PaginationComponent', () => {
   let component: PaginationComponent;
@@ -18,6 +18,10 @@ describe('PaginationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
+
+    const pagination: PaginationService = new PaginationService({}, () => {});
+    component.pagination = pagination;
+
     fixture.detectChanges();
   });
 
@@ -25,4 +29,3 @@ describe('PaginationComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-*/

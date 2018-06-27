@@ -19,8 +19,12 @@ import { SignupComponent } from '@app/components/signup/signup.component';
 import { NotFoundComponent } from '@app/components/not-found/not-found.component';
 
 import { SharedModule } from '@shared/shared.module';
+import { SnackBarComponent } from '@app/shared/components/snack-bar/snack-bar.component';
 
 @NgModule({
+    entryComponents: [
+        SnackBarComponent
+    ],
     declarations: [
         AppComponent,
         LoginComponent,
