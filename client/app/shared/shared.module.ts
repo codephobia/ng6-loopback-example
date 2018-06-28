@@ -10,7 +10,7 @@ import { MatSnackBarModule } from '@angular/material';
     imports: [
         CommonModule,
         RouterModule,
-        MatSnackBarModule
+        MatSnackBarModule,
     ],
     declarations: [
         SnackBarComponent,

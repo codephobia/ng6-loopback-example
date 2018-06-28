@@ -1,18 +1,18 @@
-<div class="pagination">
+<div class="pagination" *ngIf="show()">
     <ul>
         <li>
-            <button type="button" (click)="pagination.setPage(pagination.page - 1)" [disabled]="pagination.page - 1 === 0">
-                <i class="fas fa-caret-left"></i>
+            <button type="button" (click)="pagination.setPage(pagination.page - 1)" [disabled]="prevDisabled()">
+                <i [ngClass]="prevClass()"></i>
             </button>
         </li>
         <li *ngFor="let p of pagination.pagesArray()">
-            <button type="button" (click)="pagination.setPage(p)" [ngClass]="{ 'active': pagination.page == p }">
+            <button type="button" role="link" (click)="pagination.setPage(p)" [ngClass]="{ 'active': pagination.page == p }">
                 {{p}}
             </button>
         </li>
         <li>
-            <button type="button" (click)="pagination.setPage(pagination.page + 1)" [disabled]="pagination.page + 1 > pagination.totalPages()">
-                <i class="fas fa-caret-right"></i>
+            <button type="button" role="link" (click)="pagination.setPage(pagination.page + 1)" [disabled]="nextDisabled()">
+                <i [ngClass]="nextClass()"></i>
             </button>
         </li>
     </ul>

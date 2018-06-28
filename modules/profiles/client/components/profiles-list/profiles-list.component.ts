@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { User, UserApi as UserService, LoopBackFilter } from '@lbservices';
 import { PaginationService } from '@shared/services/pagination/pagination.service';
+import { profilesPerPage } from './resolvers/profies-resolver-settings';
 
 @Component({
     selector: 'app-profiles-list',
@@ -16,7 +17,9 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
     private profilesSub;
 
     profiles: User[];
+    profilesCount: number;
     page: number = 1;
+    perpage: number = profilesPerPage;
     profilesPagination: PaginationService;
 
     loading: boolean = false;
@@ -46,16 +49,19 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
     }
 
     initProfiles() {
-        this.route.data.subscribe(({ profiles }) => {
+        this.route.data.subscribe(({ profiles, profilesCount }) => {
             this.profiles = profiles;
+            this.profilesCount = profilesCount.count;
         });
     }
 
     ngOnInit() {
         this.profilesPagination = new PaginationService({
             page: this.page,
-            perpage: 1,
-            total: 2,
+            perpage: this.perpage,
+            total: this.profilesCount,
+            showNumbers: true,
+            showPageless: false,
         }, (page: number, perpage: number) => {
             this.updateProfiles(page, perpage, this.search);
         });

@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 
@@ -8,23 +7,33 @@ export interface PaginationOptions {
     page?: number;
     perpage?: number;
     total?: number;
+    showNumbers?: boolean;
+    showPageless?: boolean;
 }
 
-@Injectable()
+export interface PaginationCallback {
+    (page: number, perpage: number): void;
+}
+
 export class PaginationService {
     page: number;
     perpage: number;
     total: number;
+    showNumbers: boolean;
+    showPageless: boolean;
+    callback: PaginationCallback;
+
     loading: boolean = false;
-    callback: (page: number, perpage: number) => void;
 
     constructor(
         options: PaginationOptions,
-        callback: (page: number, perpage: number) => void
+        callback: PaginationCallback
     ) {
         this.page = options.page || 1;
         this.perpage = options.perpage || 25;
         this.total = options.total || 0;
+        this.showNumbers = (options.showNumbers !== undefined) ? options.showNumbers : true;
+        this.showPageless = (options.showPageless !== undefined) ? options.showPageless : false;
         this.callback = callback;
     }
 
@@ -65,6 +74,10 @@ export class PaginationService {
         var totalPages: number = this.totalPages();
         var start: number = 1;
         var end: number = totalPages;
+
+        if (!this.showNumbers) {
+            return [];
+        }
 
         if (end > 5) {
             if (this.page < 3) {
