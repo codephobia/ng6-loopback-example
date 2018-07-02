@@ -6,9 +6,7 @@ import { PaginationService } from './pagination.service';
 describe('PaginationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-        providers: [
-            { provide: PaginationService, useValue: new PaginationService({}, () => {}) }
-        ]
+        providers: [PaginationService]
     });
   });
 

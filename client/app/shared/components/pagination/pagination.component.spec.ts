@@ -19,7 +19,7 @@ describe('PaginationComponent', () => {
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
 
-    const pagination: PaginationService = new PaginationService({}, () => {});
+    const pagination: PaginationService = new PaginationService();
     component.pagination = pagination;
 
     fixture.detectChanges();

@@ -10,6 +10,7 @@ import { profilesPerPage } from './resolvers/profies-resolver-settings';
     selector: 'app-profiles-list',
     templateUrl: './profiles-list.component.html',
     styleUrls: ['./profiles-list.component.scss'],
+    providers: [PaginationService]
 })
 export class ProfilesListComponent implements OnInit, OnDestroy {
     private navSub;
@@ -20,7 +21,6 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
     profilesCount: number;
     page: number = 1;
     perpage: number = profilesPerPage;
-    profilesPagination: PaginationService;
 
     loading: boolean = false;
     search: string;
@@ -28,7 +28,9 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
     constructor(
         private user: UserService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        public profilesPagination: PaginationService,
+        public anotherPagination: PaginationService
     ) {
         this.navSub = this.router.events.subscribe((e: any) => {
             if (e instanceof NavigationEnd) {
@@ -56,7 +58,7 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.profilesPagination = new PaginationService({
+        this.profilesPagination.init({
             page: this.page,
             perpage: this.perpage,
             total: this.profilesCount,

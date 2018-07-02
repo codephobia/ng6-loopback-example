@@ -7,7 +7,7 @@ import { PaginationService } from '@app/shared/services/pagination/pagination.se
     styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent {
-    @Input() pagination: PaginationService;
+    @Input() public pagination: PaginationService
 
     constructor() {}
 

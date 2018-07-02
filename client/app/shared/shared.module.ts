@@ -14,7 +14,7 @@ import { MatSnackBarModule } from '@angular/material';
     ],
     declarations: [
         SnackBarComponent,
-        PaginationComponent,
+        PaginationComponent
     ],
     exports: [
         SnackBarComponent,

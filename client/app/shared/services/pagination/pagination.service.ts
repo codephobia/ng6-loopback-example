@@ -1,19 +1,9 @@
+import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 
 import { LoopBackFilter } from '@lbservices';
-
-export interface PaginationOptions {
-    page?: number;
-    perpage?: number;
-    total?: number;
-    showNumbers?: boolean;
-    showPageless?: boolean;
-}
-
-export interface PaginationCallback {
-    (page: number, perpage: number): void;
-}
+import { PaginationOptions, PaginationCallback } from './pagination.types';
 
 export class PaginationService {
     page: number;
@@ -22,13 +12,11 @@ export class PaginationService {
     showNumbers: boolean;
     showPageless: boolean;
     callback: PaginationCallback;
-
     loading: boolean = false;
 
-    constructor(
-        options: PaginationOptions,
-        callback: PaginationCallback
-    ) {
+    constructor() {}
+
+    init(options: PaginationOptions, callback: PaginationCallback): void {
         this.page = options.page || 1;
         this.perpage = options.perpage || 25;
         this.total = options.total || 0;
