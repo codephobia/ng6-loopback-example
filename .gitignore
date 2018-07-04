@@ -19,7 +19,7 @@ node_modules
 npm-debug.log
 
 # compiled output
-/dist
+/client/dist
 /dist-server
 /tmp
 /out-tsc

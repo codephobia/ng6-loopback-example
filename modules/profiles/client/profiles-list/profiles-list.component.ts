@@ -36,7 +36,7 @@ export class ProfilesListComponent implements OnInit, OnDestroy {
             if (e instanceof NavigationEnd) {
                 this.initNav();
             }
-        })
+        });
     }
 
     initNav() {

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProfilesOutletComponent } from './components/profiles-outlet/profiles-outlet.component';
-import { ProfileRoutes, ProfileProviders } from './components/profile/profile.routes';
-import { ProfilesListRoutes, ProfilesListProviders } from './components/profiles-list/profiles-list.routes';
+import { ProfilesOutletComponent } from './profiles-outlet/profiles-outlet.component';
+import { ProfileRoutes, ProfileProviders } from './profile/profile.routes';
+import { ProfilesListRoutes, ProfilesListProviders } from './profiles-list/profiles-list.routes';
 
 const routes: Routes = [
     {

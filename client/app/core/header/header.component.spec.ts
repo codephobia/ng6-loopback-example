@@ -5,7 +5,7 @@ import { MatToolbarModule, MatMenuModule, MatSnackBarModule } from '@angular/mat
 import { SDKBrowserModule } from '@lbservices';
 
 import { HeaderComponent } from './header.component';
-import { UserNavComponent } from '@app/components/user-nav/user-nav.component';
+import { UserNavComponent } from '@app/core/user-nav/user-nav.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

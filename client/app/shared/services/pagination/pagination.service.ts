@@ -1,4 +1,3 @@
-import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 
