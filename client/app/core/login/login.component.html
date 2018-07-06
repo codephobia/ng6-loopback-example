@@ -1,17 +1,17 @@
 <div class="p-t-xl p-b-xl" fxLayout="row" fxFlex>
-    <form class="login-form" (ngSubmit)="onLogin()" fxLayout="column" fxFlex>
+    <form class="login-form" (ngSubmit)="onLogin()" [formGroup]="loginForm" fxLayout="column" fxFlex>
         <div fxLayout="row" fxFlex>
             <mat-form-field fxFlex>
-                <input matInput type="text" name="username" placeholder="Username" [(ngModel)]="username" autofocus>
+                <input matInput type="text" name="username" placeholder="Username" formControlName="username" autofocus>
             </mat-form-field>
         </div>
         <div fxLayout="row" fxFlex>
             <mat-form-field fxFlex>
-                <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password">
+                <input matInput type="password" name="password" placeholder="Password" formControlName="password">
             </mat-form-field>
         </div>
         <div fxLayout="row" fxFlex>
-            <button mat-button color="primary" type="submit" fxFlex>Login</button>
+            <button type="submit" mat-button color="primary" fxFlex>Login</button>
         </div>
     </form>
 </div>

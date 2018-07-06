@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
 import { SDKBrowserModule } from '@lbservices';
@@ -22,7 +22,7 @@ describe('SignupComponent', () => {
         BrowserAnimationsModule,
         RouterTestingModule,
         SDKBrowserModule.forRoot(),
-        FormsModule,
+        ReactiveFormsModule,
         FlexLayoutModule,
         MatInputModule,
         MatButtonModule,

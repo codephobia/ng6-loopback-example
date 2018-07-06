@@ -1,8 +1,8 @@
-
 import { finalize } from 'rxjs/operators';
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { UserApi as UserService } from '@lbservices';
 import { SnackBarService } from '@shared/services/snack-bar/snack-bar.service';
@@ -16,55 +16,39 @@ import { SnackBarService } from '@shared/services/snack-bar/snack-bar.service';
         SnackBarService,
     ],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
     loading: boolean = false;
-    username: string = '';
-    email: string = '';
-    password: string = '';
-    cpassword: string = '';
+    signupForm: FormGroup;
 
     constructor(
         private router: Router,
-        protected user: UserService,
-        protected snackbar: SnackBarService
-    ) { }
-
-    ngOnInit() {
+        private user: UserService,
+        private snackbar: SnackBarService,
+        private fb: FormBuilder
+    ) {
+        this.createSignupForm();
     }
 
-    validPassword(): boolean {
-        // validate password entered
-        if (!this.password.length) {
-            this.snackbar.notify('Password is required', ['error']);
-            return false;
-        }
-
-        // validate confirmed password
-        if (!this.cpassword.length) {
-            this.snackbar.notify('Confirm your password', ['error']);
-            return false;
-        }
-
-        // validate passwords match
-        if (this.password !== this.cpassword) {
-            this.snackbar.notify('Passwords do not match', ['error']);
-            return false;
-        }
-
-        return true;
+    private createSignupForm(): void {
+        this.signupForm = this.fb.group({
+            username: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', Validators.required],
+            cpassword: ['', Validators.required],
+        });
     }
 
     onSignup(): void {
-        if (!this.validPassword()) {
+        if (!this.signupForm.valid) {
             return;
         }
 
         this.loading = true;
 
         this.user.create({
-                username: this.username,
-                email: this.email,
-                password: this.password
+                username: this.signupForm.get('username').value,
+                email: this.signupForm.get('email').value,
+                password: this.signupForm.get('password').value
             })
             .pipe(
                 finalize(() => {
